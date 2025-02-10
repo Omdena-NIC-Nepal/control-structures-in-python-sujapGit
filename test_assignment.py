@@ -32,7 +32,7 @@ def import_notebook_module(notebook_path):
 # Then use in tests
 assignment = import_notebook_module('assignment.ipynb')
 
-def test_while_loop_even_numbers(capsys):
+def while_loop_even_numbers(capsys):
     """Test the while loop for printing even numbers up to 16"""
     assignment.while_loop()
     captured = capsys.readouterr().out.strip().split('\n')
@@ -44,7 +44,7 @@ def test_while_loop_even_numbers(capsys):
     for actual, expect in zip(captured, expected):
         assert actual.strip() == expect, f"Expected {expect}, got {actual}"
 
-def test_for_loop_skip_divisible_by_3(capsys):
+def for_loop_skip_divisible_by_3(capsys):
     """Test for loop that skips numbers divisible by 3"""
     assignment.for_loop_continue()
     captured = capsys.readouterr().out.strip().split('\n')
@@ -56,7 +56,7 @@ def test_for_loop_skip_divisible_by_3(capsys):
     for actual, expect in zip(captured, expected):
         assert actual.strip() == expect, f"Expected {expect}, got {actual}"
 
-def test_number_classification():
+def number_classification():
     """Test if-else number classification"""
     # Capture stdout
     def test_input(input_val):
@@ -83,7 +83,7 @@ def test_number_classification():
     assert "positive" in test_input(10).lower(), "Failed to identify positive number"
     assert "zero" in test_input(0).lower(), "Failed to identify zero"
 
-def test_multiplication_table(capsys):
+def multiplication_table(capsys):
     """Test nested loops multiplication table"""
     assignment.multiplication_table()
     captured = capsys.readouterr().out.strip().split('\n')
